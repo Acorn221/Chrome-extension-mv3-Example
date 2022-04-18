@@ -1,0 +1,26 @@
+{
+  "name": "NSFWJS Mv3 Demo",
+  "description": "This is to demo how nsfwJS does not currently work with manifestV3 due to some kind of eval or something",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+      "default_popup": "index.html",
+      "default_title": "Open the popup"
+  },
+  "icons": {
+      "16": "logo192.png",
+      "48": "logo192.png",
+      "128": "logo192.png"
+  },
+  "host_permissions": [
+    "*://*.same.energy/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.same.energy/*"],
+      "js": ["./static/js/contentScript.js"],
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ]
+}
